@@ -3,3 +3,4 @@
 - JDK8
 - Gradle
 - Node
+- Git
