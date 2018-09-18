@@ -1,4 +1,4 @@
-FROM gradle:4.9-jdk8-alpine
+FROM gradle:4.10-jdk8-alpine
 
 ENV NODE_VERSION 8.12.0
 USER root
