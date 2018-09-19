@@ -7,6 +7,7 @@ RUN addgroup -g 1001 node \
       && adduser -u 1001 -G node -s /bin/sh -D node \
       && apk add --no-cache \
       libstdc++ \
+      alpine-sdk \
       && apk add --no-cache --virtual .build-deps \
       binutils-gold \
       curl \
@@ -17,9 +18,7 @@ RUN addgroup -g 1001 node \
       linux-headers \
       make \
       python \
-      alpine-sdk \
       xz \
-      git \
 # gpg keys listed at https://github.com/nodejs/node#release-team
       && for key in \
         94AE36675C464D64BAFA68DD7434390BDBE9B9C5 \
@@ -70,6 +69,6 @@ RUN addgroup -g 1001 node \
           && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz \
           && apk del .build-deps-yarn
 
-RUN apk --update add --no-cache fontconfig ttf-dejavu && npm install -g gulp bower
+RUN apk --update add --no-cache fontconfig ttf-dejavu
 
 USER gradle
