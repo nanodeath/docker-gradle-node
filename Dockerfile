@@ -1,6 +1,6 @@
 FROM gradle:4.10.3-jdk8-alpine
 
-ENV NODE_VERSION 8.12.0
+ENV NODE_VERSION 8.16.1
 USER root
 
 RUN addgroup -g 1001 node \
